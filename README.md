@@ -4,7 +4,7 @@ Copy the current file path with line numbers from VS Code.
 
 `copy-path-line` is a quiet utility extension for engineers who often paste file references into chats, issues, PRs, or code review comments. It supports both relative and absolute paths, and it formats multi-selection ranges into a compact output such as `1-3,5-6,8-11`.
 
-Chinese documentation: <https://github.com/dmxiaoshubao/copy-path-line/blob/main/docs/README.zh-CN.md>
+[中文文档](https://github.com/dmxiaoshubao/copy-path-line/blob/main/docs/README.zh-CN.md)
 
 Repository: <https://github.com/dmxiaoshubao/copy-path-line>
 
