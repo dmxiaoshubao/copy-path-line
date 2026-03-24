@@ -18,3 +18,15 @@ The plugin is built against the IntelliJ Platform and targets common editor APIs
 ## Development
 
 This subproject expects Java 17 through `jenv local 17` and uses a project-local Gradle wrapper instead of a global Gradle installation.
+
+## Local Gradle Distribution
+
+To avoid repeated wrapper downloads, you can place the Gradle distribution archive at:
+
+`idea-plugin/local-tools/gradle/gradle-9.0.0-bin.zip`
+
+The `gradlew` script will prefer:
+
+1. `idea-plugin/local-tools/gradle/gradle-9.0.0/bin/gradle`
+2. `idea-plugin/local-tools/gradle/gradle-9.0.0-bin.zip`
+3. the default Gradle wrapper download flow

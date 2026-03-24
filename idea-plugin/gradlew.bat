@@ -31,6 +31,9 @@ if "%DIRNAME%"=="" set DIRNAME=.
 @rem This is normally unused
 set APP_BASE_NAME=%~n0
 set APP_HOME=%DIRNAME%
+set LOCAL_GRADLE_DIR=%APP_HOME%\local-tools\gradle
+set LOCAL_GRADLE_HOME=%LOCAL_GRADLE_DIR%\gradle-9.0.0
+set LOCAL_GRADLE_ZIP=%LOCAL_GRADLE_DIR%\gradle-9.0.0-bin.zip
 
 @rem Resolve any "." and ".." in APP_HOME to make it shorter.
 for %%i in ("%APP_HOME%") do set APP_HOME=%%~fi
@@ -74,6 +77,12 @@ goto fail
 
 set CLASSPATH=
 
+if exist "%LOCAL_GRADLE_HOME%\bin\gradle.bat" call "%LOCAL_GRADLE_HOME%\bin\gradle.bat" %* && goto end
+
+if exist "%LOCAL_GRADLE_ZIP%" (
+  powershell -NoProfile -Command "Expand-Archive -Path '%LOCAL_GRADLE_ZIP%' -DestinationPath '%LOCAL_GRADLE_DIR%' -Force" >NUL 2>&1
+  if exist "%LOCAL_GRADLE_HOME%\bin\gradle.bat" call "%LOCAL_GRADLE_HOME%\bin\gradle.bat" %* && goto end
+)
 
 @rem Execute Gradle
 "%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %GRADLE_OPTS% "-Dorg.gradle.appname=%APP_BASE_NAME%" -classpath "%CLASSPATH%" -jar "%APP_HOME%\gradle\wrapper\gradle-wrapper.jar" %*

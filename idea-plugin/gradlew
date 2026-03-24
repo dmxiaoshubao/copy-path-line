@@ -94,6 +94,11 @@ if [ -z "$GRADLE_USER_HOME" ] ; then
     export GRADLE_USER_HOME
 fi
 
+LOCAL_GRADLE_VERSION="9.0.0"
+LOCAL_GRADLE_DIR="$APP_HOME/local-tools/gradle"
+LOCAL_GRADLE_ZIP="$LOCAL_GRADLE_DIR/gradle-$LOCAL_GRADLE_VERSION-bin.zip"
+LOCAL_GRADLE_HOME="$LOCAL_GRADLE_DIR/gradle-$LOCAL_GRADLE_VERSION"
+
 java_major_version() {
     java_version_output=$("$1" -version 2>&1 | sed -n '1p')
     java_version=$(printf '%s\n' "$java_version_output" | sed -n 's/.*version "\(.*\)".*/\1/p')
@@ -147,6 +152,24 @@ if [ -z "$JAVA_HOME" ] ; then
             export JAVA_HOME
             use_system_java=true
         fi
+    fi
+fi
+
+if [ -x "$LOCAL_GRADLE_HOME/bin/gradle" ] ; then
+    exec "$LOCAL_GRADLE_HOME/bin/gradle" "$@"
+fi
+
+if [ -f "$LOCAL_GRADLE_ZIP" ] ; then
+    if command -v unzip >/dev/null 2>&1 ; then
+        mkdir -p "$LOCAL_GRADLE_DIR" || die "ERROR: Could not create local Gradle directory: $LOCAL_GRADLE_DIR"
+        unzip -q -o "$LOCAL_GRADLE_ZIP" -d "$LOCAL_GRADLE_DIR" >/dev/null 2>&1 ||
+            die "ERROR: Failed to extract local Gradle archive: $LOCAL_GRADLE_ZIP"
+
+        if [ -x "$LOCAL_GRADLE_HOME/bin/gradle" ] ; then
+            exec "$LOCAL_GRADLE_HOME/bin/gradle" "$@"
+        fi
+    else
+        warn "Local Gradle archive found but 'unzip' is unavailable: $LOCAL_GRADLE_ZIP"
     fi
 fi
 
