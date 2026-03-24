@@ -1,0 +1,20 @@
+<idea-plugin require-restart="false">
+    <depends>com.intellij.modules.platform</depends>
+
+    <resource-bundle>messages.CopyPathLineBundle</resource-bundle>
+
+    <actions>
+        <action
+                id="com.dmxiaoshubao.copypathline.idea.copyRelativePathWithLine"
+                class="com.dmxiaoshubao.copypathline.idea.actions.CopyRelativePathWithLineAction">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl C"/>
+            <keyboard-shortcut keymap="Mac OS X" first-keystroke="shift meta C" replace-all="true"/>
+        </action>
+        <action
+                id="com.dmxiaoshubao.copypathline.idea.copyAbsolutePathWithLine"
+                class="com.dmxiaoshubao.copypathline.idea.actions.CopyAbsolutePathWithLineAction">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>

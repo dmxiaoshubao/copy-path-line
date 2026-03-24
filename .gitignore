@@ -3,3 +3,11 @@ out
 .vscode-test
 .DS_Store
 *.vsix
+.gradle-dist
+gradle-*.zip
+.idea
+*.iml
+idea-plugin/.gradle
+idea-plugin/build
+idea-plugin/.gradle-user-home
+idea-plugin/.intellijPlatform

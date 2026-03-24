@@ -8,6 +8,8 @@ Copy the current file path with line numbers from VS Code.
 
 Repository: <https://github.com/dmxiaoshubao/copy-path-line>
 
+JetBrains IDE plugin subproject: [`idea-plugin/`](./idea-plugin)
+
 ## Features
 
 - Copy relative path with line numbers
