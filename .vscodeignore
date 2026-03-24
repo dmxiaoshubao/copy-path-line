@@ -1,0 +1,14 @@
+.git/**
+.github/**
+.vscode/**
+.vscode-test/**
+src/**
+fixtures/**
+docs/**
+node_modules/**
+out/test/**
+media/icon.svg
+package-lock.json
+tsconfig.json
+*.ts
+*.map
