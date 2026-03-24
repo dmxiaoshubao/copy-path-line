@@ -1,5 +1,4 @@
 {
-  "displayName": "Copy Path Line",
   "description": "Copy file path with line ranges from the active editor.",
   "commands.category": "Copy Path Line",
   "commands.copyRelative.title": "Copy Relative Path with Line",

@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
-- Initial release of `copy-path-line`
+- Initial release of `Copy Path Line`
 - Copy relative path with line numbers
 - Copy absolute path with line numbers
 - Default keyboard shortcut for relative path copy

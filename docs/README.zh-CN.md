@@ -1,6 +1,6 @@
-# copy-path-line
+# Copy Path Line
 
-`copy-path-line` 是一个 VS Code 插件，用来复制“当前文件路径 + 行号”。
+`Copy Path Line` 是一个 VS Code 插件，用来复制“当前文件路径 + 行号”。
 
 它适合在这些场景里使用：
 

@@ -1,6 +1,6 @@
 {
-  "name": "copy-path-line",
-  "displayName": "%displayName%",
+  "name": "copy-path-line-tool",
+  "displayName": "Copy Path Line",
   "description": "%description%",
   "version": "0.0.1",
   "publisher": "dmxiaoshubao",
