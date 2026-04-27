@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.0] - 2026-04-27
+
+### Added
+
+- Add `Add to Claude Thread` command for inserting the active file or selected ranges into Claude Code as `@` mentions.
+- Support multiple selections when adding references to a Claude Code thread.
+
+### Changed
+
+- Exclude the JetBrains plugin subproject and local development files from VSIX packaging.
+- Remove the unintended macOS `ctrl+shift+c` shortcut entry.
+
 ## [0.0.1] - 2026-03-24
 
 ### Added

@@ -2,5 +2,6 @@
   "description": "复制当前编辑器文件路径与行号，支持相对路径和绝对路径。",
   "commands.category": "复制路径行号",
   "commands.copyRelative.title": "复制相对路径+行号",
-  "commands.copyAbsolute.title": "复制绝对路径+行号"
+  "commands.copyAbsolute.title": "复制绝对路径+行号",
+  "commands.addToClaudeThread.title": "Add to Claude Thread"
 }

@@ -2,5 +2,6 @@
   "description": "Copy file path with line ranges from the active editor.",
   "commands.category": "Copy Path Line",
   "commands.copyRelative.title": "Copy Relative Path with Line",
-  "commands.copyAbsolute.title": "Copy Absolute Path with Line"
+  "commands.copyAbsolute.title": "Copy Absolute Path with Line",
+  "commands.addToClaudeThread.title": "Add to Claude Thread"
 }

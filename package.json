@@ -2,7 +2,7 @@
   "name": "copy-path-line-tool",
   "displayName": "Copy Path Line",
   "description": "%description%",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "publisher": "dmxiaoshubao",
   "license": "SEE LICENSE IN LICENSE",
   "author": {
@@ -53,18 +53,17 @@
         "command": "copyPathLine.copyAbsolutePathWithLine",
         "title": "%commands.copyAbsolute.title%",
         "category": "%commands.category%"
+      },
+      {
+        "command": "copyPathLine.addToClaudeThread",
+        "title": "%commands.addToClaudeThread.title%",
+        "category": "%commands.category%"
       }
     ],
     "keybindings": [
       {
         "command": "copyPathLine.copyRelativePathWithLine",
         "key": "shift+cmd+c",
-        "mac": "shift+cmd+c",
-        "when": "editorTextFocus && resourceScheme == file"
-      },
-      {
-        "command": "copyPathLine.copyRelativePathWithLine",
-        "key": "shift+ctrl+c",
         "win": "shift+ctrl+c",
         "linux": "shift+ctrl+c",
         "when": "editorTextFocus && resourceScheme == file"
@@ -81,6 +80,11 @@
           "command": "copyPathLine.copyAbsolutePathWithLine",
           "when": "resourceScheme == file",
           "group": "navigation@11"
+        },
+        {
+          "command": "copyPathLine.addToClaudeThread",
+          "when": "resourceScheme == file",
+          "group": "navigation@12"
         }
       ]
     }

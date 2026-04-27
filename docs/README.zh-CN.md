@@ -8,7 +8,7 @@
 - 在 GitHub Issue / PR / Review 评论里贴文件引用
 - 在团队协作中快速说明某一段代码位置
 
-插件默认复制相对路径，也支持复制绝对路径；支持多光标、多选区，并会把行号整理成紧凑格式，例如 `1-3,5-6,8-11`。
+插件默认复制相对路径，也支持复制绝对路径；支持多光标、多选区，并会把行号整理成紧凑格式，例如 `1-3,5-6,8-11`。也可以把当前文件或选区作为 `@` 引用添加到 Claude Code 会话。
 
 项目地址：
 
@@ -18,6 +18,7 @@
 
 - 支持复制相对路径 + 行号
 - 支持复制绝对路径 + 行号
+- 支持通过 `Add to Claude Thread` 添加 Claude Code `@` 引用
 - 支持快捷键触发
 - 支持命令面板触发
 - 支持编辑器右键菜单触发
@@ -31,11 +32,29 @@
 
 `复制相对路径+行号`
 `复制绝对路径+行号`
+`Add to Claude Thread`
 
 对应命令 ID：
 
 - `copyPathLine.copyRelativePathWithLine`
 - `copyPathLine.copyAbsolutePathWithLine`
+- `copyPathLine.addToClaudeThread`
+
+## Claude Code 集成
+
+`Add to Claude Thread` 会复用 Claude Code 插件自己的 `@` 引用能力，把当前文件插入 Claude Code 输入框；如果当前有选区，会插入带行号的引用。
+
+多选区时，插件会对每一段选区分别添加一次，确保所有选中的行号段都进入 Claude 会话。
+
+示例：
+
+```text
+@src/extension.ts
+@src/extension.ts#8
+@src/extension.ts#8-12
+```
+
+这个命令需要已安装并启用 Claude Code VS Code 插件。
 
 ## 默认快捷键
 
@@ -44,20 +63,22 @@
 - macOS: `shift+cmd+c`
 - Windows / Linux: `shift+ctrl+c`
 
-“复制绝对路径+行号”命令默认不绑定快捷键。如果你需要，可以在 VS Code 的键位设置里为下面这个命令单独配置：
+“复制绝对路径+行号”和 `Add to Claude Thread` 命令默认不绑定快捷键。如果你需要，可以在 VS Code 的键位设置里为下面的命令单独配置：
 
 ```text
 copyPathLine.copyAbsolutePathWithLine
+copyPathLine.addToClaudeThread
 ```
 
 ## 右键菜单
 
-插件会在编辑器右键菜单中增加两个入口：
+插件会在编辑器右键菜单中增加三个入口：
 
 - `复制相对路径+行号`
 - `复制绝对路径+行号`
+- `Add to Claude Thread`
 
-这两个入口和命令面板里的命令行为完全一致。
+这些入口和命令面板里的命令行为完全一致。
 
 ## 输出格式
 

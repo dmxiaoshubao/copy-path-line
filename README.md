@@ -2,7 +2,7 @@
 
 Copy the current file path with line numbers from VS Code.
 
-`Copy Path Line` is a quiet utility extension for engineers who often paste file references into chats, issues, PRs, or code review comments. It supports both relative and absolute paths, and it formats multi-selection ranges into a compact output such as `1-3,5-6,8-11`.
+`Copy Path Line` is a quiet utility extension for engineers who often paste file references into chats, issues, PRs, or code review comments. It supports both relative and absolute paths, formats multi-selection ranges into a compact output such as `1-3,5-6,8-11`, and can add the current file or selections to a Claude Code thread as `@` mentions.
 
 [中文文档](https://github.com/dmxiaoshubao/copy-path-line/blob/main/docs/README.zh-CN.md)
 
@@ -14,6 +14,7 @@ JetBrains IDE plugin subproject: [`idea-plugin/`](./idea-plugin)
 
 - Copy relative path with line numbers
 - Copy absolute path with line numbers
+- Add the current file or selections to Claude Code as `@` mentions
 - Support multi-cursor and multi-selection ranges
 - Merge overlapping and adjacent line ranges automatically
 - Work from keyboard shortcuts, Command Palette, and editor context menu
@@ -23,13 +24,31 @@ JetBrains IDE plugin subproject: [`idea-plugin/`](./idea-plugin)
 
 - `Copy Path Line: Copy Relative Path with Line`
 - `Copy Path Line: Copy Absolute Path with Line`
+- `Copy Path Line: Add to Claude Thread`
 
 Command IDs:
 
 - `copyPathLine.copyRelativePathWithLine`
 - `copyPathLine.copyAbsolutePathWithLine`
+- `copyPathLine.addToClaudeThread`
 
-The command titles are localized automatically. In English VS Code they appear in English, and in Simplified Chinese VS Code they appear in Chinese.
+The command titles are localized automatically. In English VS Code they appear in English, and in Simplified Chinese VS Code the path-copy commands appear in Chinese. `Add to Claude Thread` intentionally keeps its English title in all locales.
+
+## Claude Code Integration
+
+`Add to Claude Thread` reuses Claude Code's own `@` mention command. It inserts the active file into the Claude Code input, and selected lines become line-specific mentions.
+
+With multiple selections, the extension invokes the Claude Code mention command once per selection so every selected range is added.
+
+Examples:
+
+```text
+@src/extension.ts
+@src/extension.ts#8
+@src/extension.ts#8-12
+```
+
+This command requires the Claude Code VS Code extension to be installed and available.
 
 ## Default Shortcut
 
@@ -38,9 +57,10 @@ The default shortcut is bound to the relative-path command:
 - macOS: `shift+cmd+c`
 - Windows / Linux: `shift+ctrl+c`
 
-The absolute-path command is available but does not ship with a default shortcut. You can assign one in VS Code keyboard shortcuts by using:
+The absolute-path and Claude Code commands are available but do not ship with default shortcuts. You can assign shortcuts in VS Code keyboard shortcuts by using:
 
 - `copyPathLine.copyAbsolutePathWithLine`
+- `copyPathLine.addToClaudeThread`
 
 ## Context Menu
 
@@ -48,6 +68,7 @@ The editor context menu uses the same localized command titles:
 
 - Relative path with line numbers
 - Absolute path with line numbers
+- Add to Claude Thread
 
 ## Output Examples
 
