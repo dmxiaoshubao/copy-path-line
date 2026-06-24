@@ -20,5 +20,5 @@ export function buildCopyText(input: BuildCopyTextInput): string {
     input.mode
   );
   const lineRanges = collectLineRanges(input.selections);
-  return `${targetPath}:${formatLineRanges(lineRanges)}`;
+  return `${targetPath}#${formatLineRanges(lineRanges)}`;
 }

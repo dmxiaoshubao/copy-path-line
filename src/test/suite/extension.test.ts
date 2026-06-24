@@ -18,7 +18,7 @@ suite("extension", () => {
     await vscode.commands.executeCommand("copyPathLine.copyRelativePathWithLine");
 
     const clipboardText = await vscode.env.clipboard.readText();
-    assert.strictEqual(clipboardText, path.join("fixtures", "sample.ts") + ":1-3,5");
+    assert.strictEqual(clipboardText, path.join("fixtures", "sample.ts") + "#1-3,5");
   });
 
   test("absolute command writes absolute path to clipboard", async () => {
@@ -30,7 +30,7 @@ suite("extension", () => {
     await vscode.commands.executeCommand("copyPathLine.copyAbsolutePathWithLine");
 
     const clipboardText = await vscode.env.clipboard.readText();
-    assert.strictEqual(clipboardText, `${fixturePath}:2`);
+    assert.strictEqual(clipboardText, `${fixturePath}#2`);
   });
 
   test("commands are registered", async () => {

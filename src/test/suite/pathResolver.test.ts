@@ -55,7 +55,7 @@ suite("pathResolver", () => {
       ]
     });
 
-    assert.strictEqual(result, "/standalone/file.ts:7");
+    assert.strictEqual(result, "/standalone/file.ts#7");
   });
 
   test("buildCopyText formats windows paths and merged ranges", () => {
@@ -82,6 +82,6 @@ suite("pathResolver", () => {
       ]
     });
 
-    assert.strictEqual(result, "src\\extension.ts:1-3,5-6");
+    assert.strictEqual(result, "src\\extension.ts#1-3,5-6");
   });
 });

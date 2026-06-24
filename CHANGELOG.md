@@ -2,10 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
-## Unreleased
+## [0.1.1] - 2026-06-25
 
 ### Changed
 
+- Change copied path references from `path:line` to `path#line`.
 - Move the JetBrains IDE plugin into an independent project.
 
 ## [0.1.0] - 2026-04-27

@@ -85,16 +85,16 @@ copyPathLine.addToClaudeThread
 输出统一使用以下格式：
 
 ```text
-路径:行号
+路径#行号
 ```
 
 示例：
 
 ```text
-src/extension.ts:8
-src/extension.ts:1-3
-src/extension.ts:1-3,5-6,8-11
-/Users/name/project/src/extension.ts:8
+src/extension.ts#8
+src/extension.ts#1-3
+src/extension.ts#1-3,5-6,8-11
+/Users/name/project/src/extension.ts#8
 ```
 
 ## 行号规则
@@ -106,7 +106,7 @@ src/extension.ts:1-3,5-6,8-11
 例如：
 
 ```text
-src/app.ts:8
+src/app.ts#8
 ```
 
 ### 2. 单个连续选区
@@ -114,7 +114,7 @@ src/app.ts:8
 如果你选中了连续多行，会输出一个连续区间：
 
 ```text
-src/app.ts:3-10
+src/app.ts#3-10
 ```
 
 ### 3. 多个离散选区
@@ -128,7 +128,7 @@ src/app.ts:3-10
 那么输出会是：
 
 ```text
-src/app.ts:1-3,5-6,8-11
+src/app.ts#1-3,5-6,8-11
 ```
 
 ### 4. 自动排序与合并
@@ -161,7 +161,7 @@ src/app.ts:1-3,5-6,8-11
 例如：
 
 ```text
-src/feature/user/service.ts:12
+src/feature/user/service.ts#12
 ```
 
 ### 绝对路径
@@ -169,7 +169,7 @@ src/feature/user/service.ts:12
 绝对路径模式下，直接输出文件在本机上的完整路径：
 
 ```text
-/Users/name/project/src/feature/user/service.ts:12
+/Users/name/project/src/feature/user/service.ts#12
 ```
 
 ### 不在工作区中的文件

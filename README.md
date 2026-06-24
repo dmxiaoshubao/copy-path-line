@@ -71,9 +71,9 @@ The editor context menu uses the same localized command titles:
 ## Output Examples
 
 ```text
-src/extension.ts:8
-src/extension.ts:1-3,5-6,8-11
-/Users/name/project/src/extension.ts:8
+src/extension.ts#8
+src/extension.ts#1-3,5-6,8-11
+/Users/name/project/src/extension.ts#8
 ```
 
 ## Line Range Rules
