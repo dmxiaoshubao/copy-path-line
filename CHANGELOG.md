@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## Unreleased
+
+### Changed
+
+- Move the JetBrains IDE plugin into an independent project.
+
 ## [0.1.0] - 2026-04-27
 
 ### Added

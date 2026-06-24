@@ -1,7 +1,0 @@
-.gradle
-.kotlin
-build
-.idea
-out
-local-tools/gradle/*.zip
-local-tools/gradle/gradle-*/
