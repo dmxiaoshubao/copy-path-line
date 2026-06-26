@@ -39,4 +39,8 @@ suite("extension", () => {
     assert.ok(commands.includes("copyPathLine.copyRelativePathWithLine"));
     assert.ok(commands.includes("copyPathLine.copyAbsolutePathWithLine"));
   });
+
+  test("claude command handles missing Claude extension", async () => {
+    await assert.doesNotReject(Promise.resolve(vscode.commands.executeCommand("copyPathLine.addToClaudeThread")));
+  });
 });

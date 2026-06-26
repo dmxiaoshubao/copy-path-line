@@ -47,6 +47,7 @@ Examples:
 ```
 
 This command requires the Claude Code VS Code extension to be installed and available.
+If the Claude Code command is unavailable, `Copy Path Line` shows an error and leaves the editor selection unchanged.
 
 ## Default Shortcut
 
@@ -88,6 +89,8 @@ src/extension.ts#1-3,5-6,8-11
 - Relative paths are resolved from the workspace folder that owns the current file
 - In multi-root workspaces, the containing workspace folder is used
 - If the file is not inside a workspace folder, the extension falls back to the absolute path
+- Workspace child folders whose names start with dots, such as `..foo`, are still treated as valid relative paths
+- On Windows, files on a different drive from the workspace fall back to the absolute path
 
 ## Development
 

@@ -9,6 +9,12 @@ All notable changes to this project will be documented in this file.
 - Change copied path references from `path:line` to `path#line`.
 - Move the JetBrains IDE plugin into an independent project.
 
+### Fixed
+
+- Keep valid relative paths for workspace child folders whose names start with dots.
+- Fall back to absolute paths for Windows files on a different drive from the workspace.
+- Show a clear error when the Claude Code command is unavailable instead of invoking a missing command.
+
 ## [0.1.0] - 2026-04-27
 
 ### Added

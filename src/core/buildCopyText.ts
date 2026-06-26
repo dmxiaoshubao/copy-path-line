@@ -7,7 +7,7 @@ export interface BuildCopyTextInput {
   readonly workspaceFolderPath?: string;
   readonly selections: readonly SelectionInput[];
   readonly mode: "absolute" | "relative";
-  readonly pathApi?: Pick<typeof path, "relative">;
+  readonly pathApi?: Pick<typeof path, "isAbsolute" | "relative">;
 }
 
 export function buildCopyText(input: BuildCopyTextInput): string {

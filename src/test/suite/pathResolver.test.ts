@@ -28,6 +28,31 @@ suite("pathResolver", () => {
     assert.strictEqual(result, "/outside/file.ts");
   });
 
+  test("resolvePathForCopy keeps relative path for workspace folder names starting with dots", () => {
+    const result = resolvePathForCopy(
+      {
+        filePath: path.join("/workspace", "..foo", "file.ts"),
+        workspaceFolderPath: "/workspace"
+      },
+      "relative"
+    );
+
+    assert.strictEqual(result, path.join("..foo", "file.ts"));
+  });
+
+  test("resolvePathForCopy falls back to absolute path for windows paths on different drives", () => {
+    const result = resolvePathForCopy(
+      {
+        filePath: "D:\\file.ts",
+        workspaceFolderPath: "C:\\repo",
+        pathApi: path.win32
+      },
+      "relative"
+    );
+
+    assert.strictEqual(result, "D:\\file.ts");
+  });
+
   test("resolvePathForCopy keeps absolute path when requested", () => {
     const result = resolvePathForCopy(
       {
